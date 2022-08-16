@@ -1,0 +1,67 @@
+<div class="card">
+  <div class="card-body pb-5">
+
+    <div class="row mb-4">
+      <div class="col-10">
+        <h4 class="card-title">Lista de promociones</h4>
+        <h6 class="card-subtitle mb-2 text-muted">Inserta, actualiza y elimina las promociones.</h6>
+      </div>
+
+      <div class="col-2 text-right mt-2">
+        <button class="btn btn-primary">
+          <i class="fa fa-plus"></i> Agregar
+        </button>
+      </div>
+    </div>
+
+
+    <ngx-datatable class="material"
+      [columnMode]="ColumnMode.flex"
+      [headerHeight]="50"
+      [footerHeight]="50"
+      [rowHeight]="50"
+      [scrollbarH]="true"
+      [rows]="promotions"
+      [externalPaging]="true"
+      [count]="page.totalElements"
+      [offset]="page.pageNumber"
+      [limit]="page.size"
+      [loadingIndicator]="loadingIndicator"
+      [messages]="{ emptyMessage: 'No existen registros' }"
+      (page)="filter($event)">
+
+      <ngx-datatable-column
+        name="Imagen"
+        [flexGrow]="1"
+        prop="url">
+          <ng-template ngx-datatable-cell-template let-value="value">
+            <img [src]="value" width="45">
+          </ng-template>
+      </ngx-datatable-column>
+
+        <ngx-datatable-column
+          [flexGrow]="1"
+          name="Titulo"
+          prop="title"
+        ></ngx-datatable-column>
+
+        <ngx-datatable-column
+          [flexGrow]="3"
+          name="Descripción"
+          prop="description"
+        ></ngx-datatable-column>
+
+        <ngx-datatable-column
+          name="Acciones"
+          [flexGrow]="1"
+          prop="_id">
+            <ng-template ngx-datatable-cell-template let-value="value">
+              <span>_id</span>
+            </ng-template>
+        </ngx-datatable-column>
+
+
+    </ngx-datatable>
+
+  </div>
+</div>

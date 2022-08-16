@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/material.scss';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
+
+$primary: rgb(255,1,255);
+$secondary: rgba(173,81,235,1);
+$primary-gradient: linear-gradient(90deg, rgba(255,1,255,1) 0%, rgba(173,81,235,1) 100%);
+
+
+.fast{-webkit-animation-duration:0.5s;animation-duration:0.5s;-webkit-animation-fill-mode:both;animation-fill-mode:both}
+.pointer{cursor: pointer;}
+
+
+
