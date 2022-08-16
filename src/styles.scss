@@ -2,6 +2,10 @@
 @import '~@swimlane/ngx-datatable/themes/material.scss';
 @import '~@swimlane/ngx-datatable/assets/icons.css';
 
+@import '~ngx-toastr/toastr';
+
+
+
 $primary: rgb(255,1,255);
 $secondary: rgba(173,81,235,1);
 $primary-gradient: linear-gradient(90deg, rgba(255,1,255,1) 0%, rgba(173,81,235,1) 100%);

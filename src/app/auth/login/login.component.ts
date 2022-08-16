@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
@@ -10,14 +10,14 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginComponent {
 
-  loginForm:FormGroup = this.fb.group({
+  loginForm:UntypedFormGroup = this.fb.group({
     name:     [ '', Validators.required ],
     password: [ '', Validators.required ],
     remember: [ false ]
   });
 
   constructor(
-    private fb:FormBuilder,
+    private fb:UntypedFormBuilder,
     private authService:AuthService,
     private router:Router
   ) { }
