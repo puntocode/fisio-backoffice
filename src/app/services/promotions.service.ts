@@ -9,7 +9,7 @@ import { PromotionsList } from '../shared/models/Promotions';
 })
 export class PromotionsService {
 
-  private apiUrl = `${environment.apiBackend}/api`;
+  private apiUrl = environment.apiBackend;
 
 
   constructor(private http: HttpClient) { }

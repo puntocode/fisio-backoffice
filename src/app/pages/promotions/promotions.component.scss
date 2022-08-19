@@ -3,3 +3,7 @@
   .datatable-header-cell { overflow-x: visible; }
   .page-count::after{ content: 'Total';}
 }
+
+.modal-backdrop.your-backdrop-class {
+  z-index: 100!important;
+}

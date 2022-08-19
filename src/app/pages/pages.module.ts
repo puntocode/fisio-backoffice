@@ -24,7 +24,7 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
     CommonModule,
     PagesRoutingModule,
     SharedModule,
-    NgxDatatableModule
+    NgxDatatableModule,
   ]
 })
 export class PagesModule { }

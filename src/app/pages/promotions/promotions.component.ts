@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ColumnMode } from '@swimlane/ngx-datatable';
 import { Page } from 'src/app/shared/models/Page';
 import { Promotion } from 'src/app/shared/models/Promotions';
@@ -13,16 +14,27 @@ import { PromotionsList } from '../../shared/models/Promotions';
 export class PromotionsComponent implements OnInit {
 
   promotions:Promotion[] = [];
+  closeResult = '';
+
 
   //data-table
   ColumnMode = ColumnMode;
   page = new Page();
   loadingIndicator!:boolean;
 
-  constructor(private promotionService:PromotionsService) { }
+  constructor(
+    private promotionService:PromotionsService,
+    private modalService: NgbModal
+  ) { }
 
   ngOnInit(): void {
     this.filter({ offset: 0 });
+  }
+
+  open(content:any) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    });
   }
 
 
